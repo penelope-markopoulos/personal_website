@@ -1,24 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Elite personal portfolio showcasing front-end projects, UI experiments, case studies, and contact information." />
   <title>Penelope Markopoulos — Web Developer</title>
 
-  <!-- Prompt used to generate this file (place in an AI prompt or keep for documentation) -->
-  <!--
-  AI PROMPT: "Create an elite, modern single-page personal portfolio website (index.html) optimized for
-  design and developer audiences. The site should be visually refined, performant, accessible,
-  and easy to adapt. Include a hero section, skills snapshot, featured project case studies with
-  CTAs, a lightweight project gallery, an about section, contact form (or mailto fallback),
-  and a persistent header with smooth scroll. Use responsive layout, subtle animations,
-  SEO-friendly markup, ARIA roles, and a dark/light mode toggle. Provide clear comments to
-  allow developers to customize. Avoid external build tools — keep the file self-contained
-  and production-ready with CDN links where sensible."
-  -->
-
-  <!-- Tailwind CSS CDN for rapid styling (replace with your build pipeline as needed) -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Fonts -->
@@ -26,29 +14,25 @@
 
   <style>
     :root{--accent:#7c3aed}
-    html{scroll-behavior:smooth}
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    /* simple focus ring to improve keyboard accessibility */
     :focus{outline:3px solid rgba(124,58,237,0.18);outline-offset:2px}
-
-    /* Decorative gradient used in hero */
     .hero-blob{background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(59,130,246,0.06));backdrop-filter:blur(6px)}
   </style>
 </head>
-<body class="bg-white text-slate-900 antialiased">
+<body class="bg-white text-slate-900 antialiased dark:bg-slate-900 dark:text-slate-100">
 
   <!-- Header / Navigation -->
-  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-slate-200">
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-700">
     <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="#hero" class="flex items-center gap-3 text-slate-900 no-underline">
+      <a href="#hero" class="flex items-center gap-3 no-underline text-slate-900 dark:text-slate-100">
         <span class="inline-block w-10 h-10 rounded-md bg-gradient-to-br from-purple-600 to-blue-500 flex items-center justify-center text-white font-bold">PM</span>
         <span class="sr-only">Penelope Markopoulos — Home</span>
       </a>
 
       <nav aria-label="Primary" class="hidden md:flex gap-6 items-center text-sm">
-        <a href="#projects" class="hover:text-violet-600">Projects</a>
-        <a href="#about" class="hover:text-violet-600">About</a>
-        <a href="#contact" class="hover:text-violet-600">Contact</a>
+        <a href="#projects" class="hover:text-violet-600 dark:hover:text-violet-400">Projects</a>
+        <a href="#about" class="hover:text-violet-600 dark:hover:text-violet-400">About</a>
+        <a href="#contact" class="hover:text-violet-600 dark:hover:text-violet-400">Contact</a>
         <button id="colorToggle" class="ml-2 px-3 py-1 rounded-md border text-sm">Dark</button>
       </nav>
 
@@ -72,32 +56,31 @@
     <section id="hero" class="max-w-6xl mx-auto px-6 py-20 md:py-28">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
-          <p class="text-sm uppercase tracking-wider text-slate-500">Hi — I’m Penelope. Web Developer & Designer</p>
-          <h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight">I build thoughtful, performative interfaces that scale.</h1>
-          <p class="mt-4 text-lg text-slate-600 max-w-xl">I specialize in responsive front-end development, accessible UI, and product-focused design systems. Below you’ll find featured case studies, a project gallery, and ways to collaborate.</p>
+          <p class="text-sm uppercase tracking-wider text-slate-500 dark:text-slate-400">Hi — I’m Penelope. Web Developer & Designer</p>
+          <h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight dark:text-white">I build thoughtful, performative interfaces that scale.</h1>
+          <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-xl">I specialize in responsive front-end development, accessible UI, and product-focused design systems. Below you’ll find featured case studies, a project gallery, and ways to collaborate.</p>
 
           <div class="mt-6 flex gap-3">
             <a class="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[var(--accent)] text-white shadow hover:opacity-95" href="#projects">View projects</a>
-            <a class="inline-flex items-center gap-2 px-5 py-3 rounded-md border" href="#contact">Get in touch</a>
+            <a class="inline-flex items-center gap-2 px-5 py-3 rounded-md border dark:border-slate-600" href="#contact">Get in touch</a>
           </div>
 
-          <div class="mt-8 text-sm text-slate-500">Tech: <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>React</strong>, <strong>Tailwind</strong></div>
+          <div class="mt-8 text-sm text-slate-500 dark:text-slate-400">Tech: <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>React</strong>, <strong>Tailwind</strong></div>
         </div>
 
         <div class="relative">
           <div class="hero-blob p-6 rounded-2xl shadow-lg">
-            <!-- Replace this mockup with an interactive iframe or image of your best project -->
-            <div class="bg-gradient-to-br from-white to-slate-50 rounded-xl p-6 border border-slate-100 min-h-[240px] flex flex-col justify-between">
+            <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-100 dark:border-slate-700 min-h-[240px] flex flex-col justify-between">
               <div>
-                <div class="text-xs text-slate-500">Featured Project</div>
-                <div class="mt-2 text-lg font-semibold">Design System Dashboard</div>
-                <p class="mt-3 text-sm text-slate-600">A modular component library and dashboard built for accessibility and performance.</p>
+                <div class="text-xs text-slate-500 dark:text-slate-400">Featured Project</div>
+                <div class="mt-2 text-lg font-semibold dark:text-white">Design System Dashboard</div>
+                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">A modular component library and dashboard built for accessibility and performance.</p>
               </div>
 
-              <div class="mt-4 flex items-center gap-3 text-xs text-slate-500">
-                <span class="px-2 py-1 border rounded">React</span>
-                <span class="px-2 py-1 border rounded">Tailwind</span>
-                <span class="px-2 py-1 border rounded">WCAG</span>
+              <div class="mt-4 flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+                <span class="px-2 py-1 border rounded dark:border-slate-600">React</span>
+                <span class="px-2 py-1 border rounded dark:border-slate-600">Tailwind</span>
+                <span class="px-2 py-1 border rounded dark:border-slate-600">WCAG</span>
               </div>
             </div>
           </div>
@@ -107,54 +90,51 @@
 
     <!-- Projects / Case Studies -->
     <section id="projects" class="max-w-6xl mx-auto px-6 py-16">
-      <h2 class="text-2xl font-bold">Featured case studies</h2>
-      <p class="mt-2 text-sm text-slate-600 max-w-2xl">Deep dives that show process, decisions, and measurable impact.</p>
+      <h2 class="text-2xl font-bold dark:text-white">Featured case studies</h2>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 max-w-2xl">Deep dives that show process, decisions, and measurable impact.</p>
 
       <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Case Study 1 -->
-        <article class="border rounded-lg p-6">
-          <h3 class="font-semibold text-lg">E‑comm Performance Overhaul</h3>
-          <p class="mt-2 text-sm text-slate-600">Reduced load time by 42% and increased conversion with progressive hydration and critical CSS.</p>
+        <article class="border rounded-lg p-6 dark:border-slate-700">
+          <h3 class="font-semibold text-lg dark:text-white">E‑comm Performance Overhaul</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Reduced load time by 42% and increased conversion with progressive hydration and critical CSS.</p>
           <div class="mt-4 flex gap-3">
-            <a class="text-sm underline" href="#">Read case study</a>
-            <a class="text-sm" href="#">View repo</a>
+            <a class="text-sm underline dark:text-violet-400" href="#">Read case study</a>
+            <a class="text-sm dark:text-violet-400" href="#">View repo</a>
           </div>
         </article>
 
-        <!-- Case Study 2 -->
-        <article class="border rounded-lg p-6">
-          <h3 class="font-semibold text-lg">Accessible Design System</h3>
-          <p class="mt-2 text-sm text-slate-600">Built a tokenized design system with component tests and automated accessibility checks.</p>
+        <article class="border rounded-lg p-6 dark:border-slate-700">
+          <h3 class="font-semibold text-lg dark:text-white">Accessible Design System</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Built a tokenized design system with component tests and automated accessibility checks.</p>
           <div class="mt-4 flex gap-3">
-            <a class="text-sm underline" href="#">Read case study</a>
-            <a class="text-sm" href="#">View repo</a>
+            <a class="text-sm underline dark:text-violet-400" href="#">Read case study</a>
+            <a class="text-sm dark:text-violet-400" href="#">View repo</a>
           </div>
         </article>
       </div>
 
-      <!-- Project gallery (lightweight) -->
       <div class="mt-10">
-        <h3 class="text-lg font-semibold">Other projects</h3>
+        <h3 class="text-lg font-semibold dark:text-white">Other projects</h3>
         <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <li class="p-4 border rounded">Project A — Interactive map</li>
-          <li class="p-4 border rounded">Project B — Micro-interactions</li>
-          <li class="p-4 border rounded">Project C — CMS-powered blog</li>
-          <li class="p-4 border rounded">Project D — Data viz</li>
-          <li class="p-4 border rounded">Project E — Landing page</li>
-          <li class="p-4 border rounded">Project F — Experimental UI</li>
+          <li class="p-4 border rounded dark:border-slate-700">Project A — Interactive map</li>
+          <li class="p-4 border rounded dark:border-slate-700">Project B — Micro-interactions</li>
+          <li class="p-4 border rounded dark:border-slate-700">Project C — CMS-powered blog</li>
+          <li class="p-4 border rounded dark:border-slate-700">Project D — Data viz</li>
+          <li class="p-4 border rounded dark:border-slate-700">Project E — Landing page</li>
+          <li class="p-4 border rounded dark:border-slate-700">Project F — Experimental UI</li>
         </ul>
       </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="max-w-6xl mx-auto px-6 py-16 border-t border-slate-100">
+    <section id="about" class="max-w-6xl mx-auto px-6 py-16 border-t border-slate-100 dark:border-slate-700">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
         <div class="md:col-span-2">
-          <h2 class="text-2xl font-bold">About me</h2>
-          <p class="mt-4 text-slate-600">I’m a front-end developer with a design-first mindset. My work focuses on building accessible, scalable interfaces and making thoughtful tradeoffs between design and performance. I enjoy collaborating with product teams, running design critiques, and mentoring junior devs.</p>
+          <h2 class="text-2xl font-bold dark:text-white">About me</h2>
+          <p class="mt-4 text-slate-600 dark:text-slate-300">I’m a front-end developer with a design-first mindset. My work focuses on building accessible, scalable interfaces and making thoughtful tradeoffs between design and performance. I enjoy collaborating with product teams, running design critiques, and mentoring junior devs.</p>
 
-          <h3 class="mt-6 font-semibold">What I bring</h3>
-          <ul class="mt-2 grid gap-2 list-inside list-disc text-sm text-slate-600">
+          <h3 class="mt-6 font-semibold dark:text-white">What I bring</h3>
+          <ul class="mt-2 grid gap-2 list-inside list-disc text-sm text-slate-600 dark:text-slate-300">
             <li>Component-driven UI architecture (React + Tailwind)</li>
             <li>Performance optimization & critical rendering path</li>
             <li>Design systems & accessibility (WCAG)</li>
@@ -162,12 +142,12 @@
           </ul>
         </div>
 
-        <aside class="p-4 rounded-lg border">
-          <div class="text-sm text-slate-500">Quick facts</div>
-          <dl class="mt-3 grid gap-2 text-sm">
+        <aside class="p-4 rounded-lg border dark:border-slate-700">
+          <div class="text-sm text-slate-500 dark:text-slate-400">Quick facts</div>
+          <dl class="mt-3 grid gap-2 text-sm dark:text-slate-300">
             <div><dt class="font-medium">Location</dt><dd>San Francisco, CA</dd></div>
             <div><dt class="font-medium">Availability</dt><dd>Open to freelance & full‑time</dd></div>
-            <div><dt class="font-medium">Email</dt><dd><a href="mailto:you@example.com">you@example.com</a></dd></div>
+            <div><dt class="font-medium">Email</dt><dd><a href="mailto:pmarkopoulos@scu.edu" class="underline">pmarkopoulos@scu.edu</a></dd></div>
           </dl>
         </aside>
       </div>
@@ -175,18 +155,17 @@
 
     <!-- Contact -->
     <section id="contact" class="max-w-6xl mx-auto px-6 py-16">
-      <h2 class="text-2xl font-bold">Let’s work together</h2>
-      <p class="mt-2 text-sm text-slate-600">Tell me about your project — I’ll get back within a few business days.</p>
+      <h2 class="text-2xl font-bold dark:text-white">Let’s work together</h2>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Tell me about your project — I’ll get back within a few business days.</p>
 
-      <!-- Simple contact form (mail-to fallback) -->
       <form class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4" onsubmit="window.location.href='mailto:you@example.com?subject='+encodeURIComponent(document.getElementById('subject').value)+'&body='+encodeURIComponent(document.getElementById('message').value); return false;" aria-label="Contact form">
-        <input id="name" placeholder="Your name" class="p-3 border rounded" required />
-        <input id="email" type="email" placeholder="Email" class="p-3 border rounded" required />
-        <input id="subject" placeholder="Subject" class="p-3 border rounded md:col-span-2" required />
-        <textarea id="message" placeholder="Describe your project" class="p-3 border rounded md:col-span-2" rows="6" required></textarea>
+        <input id="name" placeholder="Your name" class="p-3 border rounded dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100" required />
+        <input id="email" type="email" placeholder="Email" class="p-3 border rounded dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100" required />
+        <input id="subject" placeholder="Subject" class="p-3 border rounded md:col-span-2 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100" required />
+        <textarea id="message" placeholder="Describe your project" class="p-3 border rounded md:col-span-2 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100" rows="6" required></textarea>
         <div class="md:col-span-2 flex gap-3">
           <button type="submit" class="px-5 py-3 rounded-md bg-[var(--accent)] text-white">Send email</button>
-          <button type="reset" class="px-5 py-3 rounded-md border">Reset</button>
+          <button type="reset" class="px-5 py-3 rounded-md border dark:border-slate-700">Reset</button>
         </div>
       </form>
 
@@ -194,45 +173,42 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-100 mt-12">
-    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+  <footer class="border-t border-slate-100 dark:border-slate-700 mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 dark:text-slate-400">
       <div>© <span id="year"></span> Penelope Markopoulos</div>
       <div class="flex gap-4 mt-3 md:mt-0">
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Resume</a>
+        <a href="#" class="hover:underline">GitHub</a>
+        <a href="#" class="hover:underline">LinkedIn</a>
+        <a href="#" class="hover:underline">Resume</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // small UX helpers: year, mobile nav, color mode
+    // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Mobile menu toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-    if (mobileToggle) mobileToggle.addEventListener('click', ()=>{
+    if (mobileToggle) mobileToggle.addEventListener('click', () => {
       const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
       mobileToggle.setAttribute('aria-expanded', String(!expanded));
       mobileMenu.classList.toggle('hidden');
     });
 
+    // Dark/light mode toggle
     const colorToggle = document.getElementById('colorToggle');
-    colorToggle.addEventListener('click', ()=>{
+    colorToggle.addEventListener('click', () => {
       const isDark = document.documentElement.classList.toggle('dark');
-      document.body.classList.toggle('bg-slate-900', isDark);
-      document.body.classList.toggle('text-white', isDark);
       colorToggle.textContent = isDark ? 'Light' : 'Dark';
     });
 
-    // prefer system color scheme
+    // Set system preference on load
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.documentElement.classList.add('dark');
-      document.body.classList.add('bg-slate-900');
-      document.body.classList.add('text-white');
       colorToggle.textContent = 'Light';
     }
   </script>
-
 </body>
 </html>
